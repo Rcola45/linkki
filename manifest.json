@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Spotlink",
 	"description": "Adds Spotify button below Youtube videos. Button will turn green if the video is found on Spotify and link to the song in the Spotify Web Player.",
-	"version": "0.0.0.2",
+	"version": "0.2",
 	"default_locale": "en",
 	"content_scripts": [
 		{
