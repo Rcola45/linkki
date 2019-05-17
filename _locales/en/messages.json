@@ -1,0 +1,10 @@
+{
+	"appName": {
+		"message": "Spotlink",
+		"description": "The title of the application, displayed in the web store."
+	},
+	"appDesc": {
+		"message": "Adds a Spotify link below Youtube videos",
+		"description": "The description of the application, displayed in the web store."
+	}
+}
