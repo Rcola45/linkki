@@ -24,7 +24,7 @@ function addSpotifyButton() {
 	);
 	if (topLevelButtons != null) {
 		// Remove button if already on page
-		button = document.getElementById("spotlink-spotify-link");
+		button = document.getElementById("linkki-spotify-link");
 		if (button) button.parentNode.removeChild(button);
 		clearInterval(loadedTimer);
 		button = getButtonNode();
@@ -41,9 +41,9 @@ function addSpotifyButton() {
 function changeButtonUrl(newUrl) {
 	// Change button url to song link
 	// Change button logo to green
-	button = document.getElementById("spotlink-spotify-link");
+	button = document.getElementById("linkki-spotify-link");
 	button.setAttribute("href", newUrl);
-	logo = document.getElementById("spotlink-spotify-logo");
+	logo = document.getElementById("linkki-spotify-logo");
 	spotifyGreenIconPath = chrome.runtime.getURL(
 		"images/spotify/Spotify_Icon_Green.png"
 	);
@@ -57,7 +57,7 @@ function getButtonNode() {
 		"images/spotify/Spotify_Icon_Black.png"
 	);
 	var buttonHtml =
-		'<a id="spotlink-spotify-link" class="yt-simple-endpoint style-scope ytd-button-renderer" target="_blank" tabindex="-1"><yt-icon-button id="button" class="style-scope ytd-button-renderer style-default size-default"><button id="button" class="style-scope yt-icon-button" aria-label="Spotify"><img id="spotlink-spotify-logo" src=' +
+		'<a id="linkki-spotify-link" class="yt-simple-endpoint style-scope ytd-button-renderer" target="_blank" tabindex="-1"><yt-icon-button id="button" class="style-scope ytd-button-renderer style-default size-default"><button id="button" class="style-scope yt-icon-button" aria-label="Spotify"><img id="linkki-spotify-logo" src=' +
 		spotifyBlackIconPath +
 		' focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"></button></yt-icon-button></a>';
 	buttonHtml = buttonHtml.trim();

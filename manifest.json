@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "__MSG_appName__",
 	"description": "__MSG_appDesc__",
-	"version": "0.2",
+	"version": "0.3",
 	"default_locale": "en",
 	"content_scripts": [
 		{
@@ -11,6 +11,7 @@
 			"run_at": "document_end"
 		}
 	],
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiiRxwMWWYgwp0pNIoYXbb4w6Q9RFbKjqYS5ZirNziz0u5Bm7B8kjMVVkFhcy2ydfXbJMsTet0DftN9tiZ4LhVpG1DRcf7B9gb+v8mI0JVKqcRhHTNiT2LDCNF1xPdH2ElCGua2dUni7kl3wxY2tyzXWd0azpLALAbkKtns0EEnOWoLP9xdYOjrlf1mYUKBzH1R1iKzLNI/lWM1pgn+OR0DKrBPbxTRTHpiOECGldU6XzUebaeP0ojdXyt5ZhS8O8TiKntNmEtfBDCpdrEWMYPwsEOs2SmaDNfaB5oS4D66s1KoN47hTq2aIRjxQpmojoomWbk1+qF3pFvfXHlr6UxQIDAQAB",
 	"options_ui": {
 		"page": "options.html",
 		"open_in_tab": false

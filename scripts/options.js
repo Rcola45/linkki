@@ -6,10 +6,10 @@ function saveOptions() {
 
 	chrome.storage.sync.set(
 		{
-			spotlink_checked_link_type: checkedItemName
+			linkki_checked_link_type: checkedItemName
 		},
 		function() {
-			document.getElementById("spotlink-options-status").innerHTML =
+			document.getElementById("linkki-options-status").innerHTML =
 				"Options saved succesfully!";
 		}
 	);
@@ -20,11 +20,11 @@ function restoreOptions() {
 	// (Or web-player by default)
 	chrome.storage.sync.get(
 		{
-			spotlink_checked_link_type: "web-player"
+			linkki_checked_link_type: "web-player"
 		},
 		function(items) {
 			document.getElementById(
-				"spotlink-" + items.spotlink_checked_link_type + "-option"
+				"linkki-" + items.linkki_checked_link_type + "-option"
 			).checked = true;
 		}
 	);
@@ -32,5 +32,5 @@ function restoreOptions() {
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document
-	.getElementById("spotlink-link-type-save")
+	.getElementById("linkki-link-type-save")
 	.addEventListener("click", saveOptions);

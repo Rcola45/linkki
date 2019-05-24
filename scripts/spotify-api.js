@@ -1,7 +1,7 @@
 function getNewAccessToken() {
 	// Query heroku proxy server to get spotify access token
 	return new Promise((resolve, reject) => {
-		url = "https://spotlink.herokuapp.com/get_token";
+		url = "https://linkki-backend.herokuapp.com/get_token";
 		fetch(url, {
 			method: "GET"
 		})
@@ -19,8 +19,8 @@ function getNewAccessToken() {
 
 function getLocalAccessToken(cb) {
 	// Retrieve access token from storage
-	chrome.storage.sync.get(["spotlink_access_token"], items => {
-		cb(items.spotlink_access_token);
+	chrome.storage.sync.get(["linkki_access_token"], items => {
+		cb(items.linkki_access_token);
 	});
 }
 
@@ -30,8 +30,8 @@ function makeNewAccessToken() {
 		getNewAccessToken().then(token => {
 			chrome.storage.sync.set(
 				{
-					spotlink_access_token: token,
-					spotlink_token_last_set: Date.now()
+					linkki_access_token: token,
+					linkki_token_last_set: Date.now()
 				},
 				resolve()
 			);
@@ -41,8 +41,8 @@ function makeNewAccessToken() {
 
 function refreshTokenIfNeeded(cb) {
 	// Check storage, get new access token if old one has expired
-	chrome.storage.sync.get(["spotlink_token_last_set"], items => {
-		if (Date.now() - items.spotlink_token_last_set > 3600000) {
+	chrome.storage.sync.get(["linkki_token_last_set"], items => {
+		if (Date.now() - items.linkki_token_last_set > 3600000) {
 			// Get new token
 			makeNewAccessToken().then(cb);
 		} else {
@@ -108,7 +108,7 @@ function searchSpotify(searchTerm, tries) {
 	if (tries >= 2) {
 		// Tried too many times, something is wrong, stop trying
 		console.error(
-			"[Spotlink] Error accessing Spotify API. Please contact the extension administrator if this continues."
+			"[Linkki] Error accessing Spotify API. Please contact the extension administrator if this continues."
 		);
 		return;
 	}
@@ -121,10 +121,7 @@ function searchSpotify(searchTerm, tries) {
 function getLinkType(cb) {
 	// Get option the user selected for link opening
 	// (default to web player)
-	chrome.storage.sync.get(
-		{ spotlink_checked_link_type: "web-player" },
-		items => {
-			return cb(items.spotlink_checked_link_type);
-		}
-	);
+	chrome.storage.sync.get({ linkki_checked_link_type: "web-player" }, items => {
+		return cb(items.linkki_checked_link_type);
+	});
 }
