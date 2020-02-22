@@ -17,9 +17,9 @@
 		"open_in_tab": false
 	},
 	"icons": {
-		"16": "images/linkki_icon_16.png",
-		"48": "images/linkki_icon_48.png",
-		"128": "images/linkki_icon_128.png"
+		"16": "images/icons/linkki_icon_16.png",
+		"48": "images/icons/linkki_icon_48.png",
+		"128": "images/icons/linkki_icon_128.png"
 	},
 	"permissions": [
 		"https://api.spotify.com/v1/search*",
